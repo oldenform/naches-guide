@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#10281d">
+<meta name="description" content="Naches, Washington — a local guide to food, businesses, trails, history and the valley.">
+<title>Naches, Washington | Valley Guide</title>
+<style>
+:root{
+  --forest:#10281d;--pine:#1d4a34;--moss:#6e7f4e;--sage:#b9c6a4;
+  --cream:#f5f0e5;--paper:#fffdf8;--ink:#1f2821;--muted:#687267;
+  --gold:#c89a52;--line:#dfe1d6;--shadow:0 18px 50px rgba(16,40,29,.12);
+  --radius:20px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{margin:0;background:var(--cream);color:var(--ink);font-family:Georgia,"Times New Roman",serif;line-height:1.6}
+a{color:inherit}
+.hero{
+  min-height:72vh;display:flex;align-items:flex-end;position:relative;overflow:hidden;
+  color:#fff;background:
+  radial-gradient(circle at 80% 20%,rgba(255,255,255,.13),transparent 28%),
+  linear-gradient(180deg,rgba(9,31,21,.15),rgba(8,26,18,.9)),
+  linear-gradient(135deg,#315b43 0%,#163724 48%,#091c13 100%);
+}
+.hero:before,.hero:after{
+  content:"";position:absolute;bottom:-35px;width:110%;height:150px;
+  background:#0b2418;clip-path:polygon(0 55%,7% 28%,13% 60%,20% 15%,27% 58%,35% 30%,43% 65%,51% 18%,59% 55%,67% 24%,75% 62%,83% 20%,91% 57%,100% 30%,100% 100%,0 100%);
+}
+.hero:after{bottom:-65px;opacity:.55;transform:scaleX(-1)}
+.hero-inner{position:relative;z-index:2;width:min(1100px,100%);margin:auto;padding:90px 24px 125px}
+.eyebrow{font:700 .78rem/1.2 system-ui,sans-serif;letter-spacing:.18em;text-transform:uppercase;color:#e4c27e}
+h1{font-size:clamp(3rem,10vw,6.8rem);line-height:.9;margin:.45rem 0 1rem;letter-spacing:-.045em}
+.hero p{max-width:650px;font-size:1.15rem;color:#edf1e8;margin:0}
+.badges{display:flex;flex-wrap:wrap;gap:10px;margin-top:25px}
+.badge{border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.08);backdrop-filter:blur(8px);padding:8px 13px;border-radius:999px;font:600 .78rem system-ui,sans-serif}
+nav{position:sticky;top:0;z-index:20;background:rgba(245,240,229,.94);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);padding:10px 14px;overflow-x:auto;white-space:nowrap}
+nav .nav-inner{width:min(1100px,100%);margin:auto;display:flex;gap:8px}
+nav a{text-decoration:none;padding:8px 13px;border:1px solid transparent;border-radius:999px;font:700 .78rem system-ui,sans-serif;color:var(--pine)}
+nav a:hover{background:#e8eadf;border-color:var(--line)}
+main{width:min(1100px,100%);margin:auto;padding:30px 18px 70px}
+section{margin:45px 0}
+.section-kicker{font:700 .72rem system-ui,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:var(--moss)}
+h2{font-size:clamp(1.9rem,5vw,2.8rem);line-height:1.05;margin:.25rem 0 18px;color:var(--forest)}
+.intro{max-width:760px;color:var(--muted);font-size:1.02rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:21px;box-shadow:var(--shadow);position:relative;overflow:hidden}
+.card:before{content:"";position:absolute;left:0;top:0;width:100%;height:4px;background:linear-gradient(90deg,var(--pine),var(--gold))}
+.card h3{margin:0 0 4px;font-size:1.2rem;color:var(--forest)}
+.meta,.hours{font:500 .79rem/1.5 system-ui,sans-serif;color:var(--muted)}
+.card p{margin:.6rem 0 0;color:#566057;font-size:.92rem}
+.pill{display:inline-block;margin-top:12px;padding:5px 9px;border-radius:999px;background:#e9eee2;color:var(--pine);font:700 .7rem system-ui,sans-serif}
+.hero-card{background:linear-gradient(145deg,#183c29,#2b5c40);color:white;border:0}
+.hero-card h3{color:white;font-size:1.45rem}.hero-card p,.hero-card .meta{color:#dce7dc}
+.history{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
+.history .card{min-height:230px}
+.history .era{font:700 .72rem system-ui,sans-serif;letter-spacing:.13em;text-transform:uppercase;color:var(--gold)}
+.alpr{
+  background:linear-gradient(145deg,#10281d,#1d4a34);color:white;border-radius:28px;padding:28px;
+  box-shadow:var(--shadow);position:relative;overflow:hidden
+}
+.alpr:after{content:"◌";position:absolute;right:-30px;top:-80px;font-size:270px;color:rgba(255,255,255,.035)}
+.alpr h2,.alpr h3{color:white}.alpr p{color:#dce6dd}
+.alpr .panel{position:relative;z-index:1;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);border-radius:18px;padding:18px;margin-top:18px}
+.alpr a{color:#e4c27e}
+.notice{border-left:4px solid var(--gold);background:#f1eadb;padding:16px 18px;border-radius:10px;color:#625b4d;font:500 .88rem system-ui,sans-serif}
+footer{background:var(--forest);color:#cbd6c8;text-align:center;padding:40px 18px;font:500 .78rem system-ui,sans-serif}
+footer strong{color:white}
+@media(max-width:600px){
+ .hero{min-height:67vh}.hero-inner{padding:72px 20px 105px}
+ main{padding:20px 14px 55px}section{margin:35px 0}
+ .card{padding:18px;border-radius:17px}.alpr{padding:21px;border-radius:22px}
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="eyebrow">Yakima Valley • Washington</div>
+    <h1>Naches</h1>
+    <p>A small-town guide to the people, places, food, trails and stories along US-12 and SR-410.</p>
+    <div class="badges">
+      <span class="badge">🌲 Mountain Valley</span>
+      <span class="badge">🍎 Orchard Country</span>
+      <span class="badge">🥾 Outdoor Access</span>
+      <span class="badge">🏡 Local Stories</span>
+    </div>
+  </div>
+</header>
+
+<nav>
+  <div class="nav-inner">
+    <a href="#history">People & History</a>
+    <a href="#eats">Good Eats</a>
+    <a href="#shops">Businesses</a>
+    <a href="#trails">Trails</a>
+    <a href="#alpr">Civic Info</a>
+  </div>
+</nav>
+
+<main>
+<section id="history">
+  <div class="section-kicker">The people behind the valley</div>
+  <h2>Stories worth remembering</h2>
+  <p class="intro">Naches is more than a stop along the highway. Its character comes from generations of people who served, worked, farmed, volunteered and helped shape the community.</p>
+  <div class="history">
+    <article class="card hero-card">
+      <div class="era">Early Naches history</div>
+      <h3>George Grahlfs</h3>
+      <div class="meta">Early Naches name • World War I serviceman</div>
+      <p>George Grahlfs is part of the early history of Naches and is remembered in the community's historical record. He was among the Naches-area men who served in the U.S. Army during World War I.</p>
+      <span class="pill">Naches history</span>
+    </article>
+    <article class="card">
+      <div class="era">Community service</div>
+      <h3>Ted Cowan</h3>
+      <div class="meta">1928–2026 • Volunteer • Fire chief • Community builder</div>
+      <p>Ted Cowan devoted decades to Naches. His community work included the Lions Club, Sportsman's Days, the community swimming pool, Applewood Park and the Naches Fire Department, where he eventually served as chief.</p>
+      <span class="pill">Community hero</span>
+    </article>
+  </div>
+</section>
+
+<section id="eats">
+  <div class="section-kicker">Eat local</div>
+  <h2>Good Eats</h2>
+  <div class="grid">
+    <article class="card"><h3>Bron Yr Aur Brewing Co.</h3><div class="meta">12160 US-12 · ★ 4.6 (1,037) · Brewpub / pizza</div><div class="hours">Mon–Thu, Sun 12–8pm · Fri–Sat 12–9pm</div></article>
+    <article class="card"><h3>Oak Creek Brewstillery</h3><div class="meta">10160 S Naches Rd · ★ 4.8 (40) · Distillery, brunch & American</div><div class="hours">Wed–Thu 4–8pm · Fri–Sat 12–9pm · Sun 10am–6pm</div></article>
+    <article class="card"><h3>What I Crave Restaurant</h3><div class="meta">216 Naches Ave · ★ 4.6 (99) · Sliders, tacos, vegetarian-friendly</div></article>
+    <article class="card"><h3>Van's 1885 Bar & Grill</h3><div class="meta">208 Naches Ave · ★ 4.4 (315) · Burgers, pizza, live karaoke</div><div class="hours">Mon–Fri, Sun 11am–10pm · Sat 11am–2am</div></article>
+    <article class="card"><h3>Naches Trading Post</h3><div class="meta">9620 US-12 · ★ 4.5 (229) · Roadside market, local fruit, ice cream</div><div class="hours">Daily 9am–6pm</div></article>
+    <article class="card"><h3>Thompson's Farm Market</h3><div class="meta">9950 US-12 · ★ 4.5 (152) · Farm stand, jams, produce</div><div class="hours">Daily 9am–5pm</div></article>
+  </div>
+</section>
+
+<section id="shops">
+  <div class="section-kicker">Local commerce</div>
+  <h2>Businesses</h2>
+  <div class="grid">
+    <article class="card"><h3>Allan Brothers Fruit</h3><div class="meta">31 Allan Rd · ★ 4.3 (255) · Fruit packing / shipping</div><div class="hours">Mon–Fri 8am–5pm · Closed weekends</div></article>
+  </div>
+  <div class="notice" style="margin-top:16px">This is a growing local guide. More small shops, outfitters, services and lodging can be added as they are documented.</div>
+</section>
+
+<section id="trails">
+  <div class="section-kicker">Get outside</div>
+  <h2>Top-Rated Hiking Trails</h2>
+  <div class="grid">
+    <article class="card"><h3>Naches Peak Loop</h3><div class="meta">★ 4.8 (653) · 3.5–4.5 mi loop · Easy–moderate</div><p>Starts near Tipsoo Lake. Wildflowers late July–early August, sweeping Mt. Rainier views.</p></article>
+    <article class="card"><h3>Sheep Lake & Sourdough Gap</h3><div class="meta">★ 4.7 (110) · Moderate, steeper near the gap</div><p>Follows the PCT off SR-410. Alpine lake, swimming, big views from the gap.</p></article>
+    <article class="card"><h3>Boulder Cave Trail</h3><div class="meta">★ 4.5 (276) · ~1.5–2 mi · Reservation required</div><p>Walk-through lava-tube cave; bring a light layer and flashlight.</p></article>
+    <article class="card"><h3>Snow Mountain Ranch</h3><div class="meta">★ 4.7 (122) · Multiple loops, easy–difficult</div><p>Choose-your-own-hike network of trails just outside Yakima; watch for rattlesnakes in summer.</p></article>
+    <article class="card"><h3>Tieton Nature Trail Suspension Bridge</h3><div class="meta">★ 4.7 (33) · ~0.5 mi round trip · Easy</div><p>Short walk near Goose Prairie to a suspension bridge over the Tieton River and basalt columns.</p></article>
+  </div>
+</section>
+
+<section id="alpr">
+  <div class="alpr">
+    <div class="section-kicker" style="color:#e4c27e">Civic information</div>
+    <h2>License Plate Reader Information</h2>
+    <p>A professional, neutral reference for visitors and residents interested in automated license plate reader (ALPR) systems in the Naches area.</p>
+    <div class="panel">
+      <h3>Public information</h3>
+      <p>The available local reporting indicates that an ALPR camera has been reported in the Naches area. Yakima County and Washington State Patrol do not publish an official public site-by-site camera map comparable to some municipal camera programs.</p>
+      <p>The <a href="https://deflock.me" target="_blank" rel="noopener noreferrer">DeFlock project</a> provides a community-reported national map that can be used as a supplemental reference for reported Flock Safety cameras in Washington.</p>
+    </div>
+    <div class="panel">
+      <h3>Washington framework</h3>
+      <p>Washington's 2026 ALPR law establishes requirements for agency use and registration of ALPR systems. For current legal or agency information, consult the relevant official government source.</p>
+    </div>
+    <div class="panel">
+      <h3>About this section</h3>
+      <p>This guide distinguishes publicly documented information from community-reported mapping. Exact locations are not presented here unless they can be supported by a reliable public source.</p>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <strong>Naches, Washington</strong><br>
+  A growing local guide to the valley, its people and its places.<br><br>
+  Built from public business listings, reviews, trail data and historical sources. Check current hours and conditions before visiting.
+</footer>
+</body>
+</html>
